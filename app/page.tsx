@@ -108,65 +108,63 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
             className="relative hidden lg:flex items-center justify-center h-full"
           >
+            {/* Image hero_1 - Image de fond */}
             <motion.div 
-              className="relative bg-white/40 backdrop-blur-sm rounded-2xl lg:rounded-3xl p-5 lg:p-8 shadow-2xl w-full max-w-lg h-full max-h-[70vh] flex items-center"
+              className="relative w-full max-w-md"
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              {/* Image placeholder avec dégradé élégant */}
-              <div className="aspect-[3/4] w-full bg-gradient-to-br from-[#622F26]/10 to-[#622F26]/30 rounded-xl lg:rounded-2xl overflow-hidden relative">
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="w-24 h-24 lg:w-32 lg:h-32 bg-white/90 rounded-xl lg:rounded-2xl mx-auto mb-3 lg:mb-4 flex items-center justify-center shadow-lg">
-                      <div className="font-black text-[#622F26] text-3xl lg:text-4xl" style={{ fontFamily: 'var(--font-arp)' }}>HS</div>
-                    </div>
-                    <p className="text-[#622F26] text-xs lg:text-sm px-4">Premium Hardwood Shutters</p>
-                  </div>
-                </div>
-                
-                {/* Decorative element */}
-                <div className="absolute bottom-4 lg:bottom-6 left-4 lg:left-6 right-4 lg:right-6 bg-white/80 backdrop-blur-sm p-3 lg:p-4 rounded-lg lg:rounded-xl">
-                  <div className="flex items-center gap-2 lg:gap-3">
-                    <div className="w-12 h-12 lg:w-16 lg:h-16 bg-[#622F26]/10 rounded-lg"></div>
-                    <div className="flex-1">
-                      <div className="h-2 lg:h-3 bg-[#622F26]/20 rounded mb-1.5 lg:mb-2 w-3/4"></div>
-                      <div className="h-1.5 lg:h-2 bg-[#622F26]/10 rounded w-1/2"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <img 
+                src="/img/hero_1.png" 
+                alt="Hardwood Shutters" 
+                className="w-full h-auto rounded-2xl lg:rounded-3xl shadow-2xl object-cover"
+              />
+            </motion.div>
 
-              {/* Badge Promotion */}
-              <motion.div 
-                className="absolute -bottom-5 lg:-bottom-6 -right-5 lg:-right-6 w-28 h-28 lg:w-32 lg:h-32 bg-[#622F26] rounded-full flex items-center justify-center shadow-2xl"
-                initial={{ scale: 0, rotate: -180 }}
-                animate={{ scale: 1, rotate: 0 }}
-                transition={{ duration: 0.8, delay: 1, type: "spring", stiffness: 200 }}
-              >
-                <div className="text-center">
-                  <div className="text-white font-black text-3xl lg:text-4xl leading-none" style={{ fontFamily: 'var(--font-arp)' }}>20%</div>
-                  <div className="text-white text-[10px] lg:text-xs mt-0.5 lg:mt-1">OFF</div>
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <svg className="w-full h-full" viewBox="0 0 128 128">
-                    <path
-                      id="circlePath"
-                      d="M 64, 64 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
-                      fill="none"
-                    />
-                    <text className="text-[7px] lg:text-[8px] fill-white/70 uppercase tracking-wider">
-                      <textPath href="#circlePath" startOffset="0%">
-                        FURNITURE SPECIAL • FURNITURE SPECIAL •
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-              </motion.div>
+            {/* Image hero_2 - Image superposée avec rotation */}
+            <motion.div
+              className="absolute -bottom-8 -right-8 w-64 lg:w-72"
+              initial={{ rotate: 0, scale: 0.8, opacity: 0 }}
+              animate={{ rotate: 8, scale: 1, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+            >
+              <img 
+                src="/img/hero_2.png" 
+                alt="Hardwood Shutters Detail" 
+                className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl object-cover border-4 border-white"
+              />
+            </motion.div>
+
+            {/* Badge Promotion */}
+            <motion.div 
+              className="absolute -top-6 -left-6 w-28 h-28 lg:w-32 lg:h-32 bg-[#622F26] rounded-full flex items-center justify-center shadow-2xl z-10"
+              initial={{ scale: 0, rotate: -180 }}
+              animate={{ scale: 1, rotate: 0 }}
+              transition={{ duration: 0.8, delay: 1, type: "spring", stiffness: 200 }}
+            >
+              <div className="text-center">
+                <div className="text-white font-black text-3xl lg:text-4xl leading-none" style={{ fontFamily: 'var(--font-arp)' }}>20%</div>
+                <div className="text-white text-[10px] lg:text-xs mt-0.5 lg:mt-1">OFF</div>
+              </div>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <svg className="w-full h-full" viewBox="0 0 128 128">
+                  <path
+                    id="circlePath"
+                    d="M 64, 64 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
+                    fill="none"
+                  />
+                  <text className="text-[7px] lg:text-[8px] fill-white/70 uppercase tracking-wider">
+                    <textPath href="#circlePath" startOffset="0%">
+                      FURNITURE SPECIAL • FURNITURE SPECIAL •
+                    </textPath>
+                  </text>
+                </svg>
+              </div>
             </motion.div>
 
             {/* Floating decoration */}
             <motion.div
-              className="absolute -top-3 lg:-top-4 -left-3 lg:-left-4 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-xl lg:rounded-2xl shadow-lg"
+              className="absolute top-1/2 -right-4 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-xl lg:rounded-2xl shadow-lg"
               animate={{ 
                 y: [0, -8, 0],
                 rotate: [0, 5, 0]
