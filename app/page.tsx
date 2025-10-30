@@ -5,13 +5,169 @@ import { Search } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <div className="h-screen max-h-screen bg-[#F2E4E1] flex flex-col overflow-hidden">
+    <div className="h-screen max-h-screen bg-[#F2E4E1] flex flex-col overflow-hidden relative">
+      {/* Background Decorative Shapes */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        {/* Large circle top right - Très flou */}
+        <motion.div
+          className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#622F26]/12 rounded-full"
+          style={{ filter: 'blur(100px)' }}
+          animate={{ 
+            scale: [1, 1.1, 1],
+            opacity: [0.5, 0.7, 0.5]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Medium circle bottom left - Flou moyen */}
+        <motion.div
+          className="absolute -bottom-32 -left-32 w-[450px] h-[450px] bg-[#EBE2CF]/80 rounded-full"
+          style={{ filter: 'blur(70px)' }}
+          animate={{ 
+            scale: [1, 1.15, 1],
+            opacity: [0.6, 0.8, 0.6]
+          }}
+          transition={{ 
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+        
+        {/* Sharp decorative circle top left - PEU de blur */}
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-52 h-52 bg-[#622F26]/25 rounded-full"
+          style={{ filter: 'blur(20px)' }}
+          animate={{ 
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            scale: [1, 1.2, 1]
+          }}
+          transition={{ 
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Sharp geometric shape - PEU de blur */}
+        <motion.div
+          className="absolute top-1/3 right-1/4 w-48 h-48 bg-gradient-to-br from-[#622F26]/30 to-[#622F26]/10 rounded-3xl rotate-45"
+          style={{ filter: 'blur(15px)' }}
+          animate={{ 
+            rotate: [45, 65, 45],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 15,
+            repeat: Infinity,
+            ease: "easeInOut"
+          }}
+        />
+        
+        {/* Middle accent circle - Flou moyen */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#EBE2CF]/50 rounded-full"
+          style={{ filter: 'blur(80px)' }}
+          animate={{ 
+            scale: [1, 1.2, 1],
+            opacity: [0.4, 0.7, 0.4]
+          }}
+          transition={{ 
+            duration: 9,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1.5
+          }}
+        />
+        
+        {/* Sharp accent bottom right - PEU de blur */}
+        <motion.div
+          className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-[#622F26]/28 rounded-full"
+          style={{ filter: 'blur(18px)' }}
+          animate={{ 
+            scale: [1, 1.3, 1],
+            opacity: [0.6, 0.9, 0.6]
+          }}
+          transition={{ 
+            duration: 7,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 2
+          }}
+        />
+        
+        {/* Sharp geometric accent bottom - PEU de blur */}
+        <motion.div
+          className="absolute bottom-1/3 left-1/3 w-56 h-56 bg-gradient-to-tl from-[#EBE2CF]/70 to-[#EBE2CF]/20 rounded-2xl rotate-12"
+          style={{ filter: 'blur(25px)' }}
+          animate={{ 
+            rotate: [12, 32, 12],
+            scale: [1, 1.15, 1]
+          }}
+          transition={{ 
+            duration: 13,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 0.5
+          }}
+        />
+        
+        {/* Additional sharp circle top right corner */}
+        <motion.div
+          className="absolute top-1/3 right-1/5 w-32 h-32 bg-[#EBE2CF]/60 rounded-full"
+          style={{ filter: 'blur(12px)' }}
+          animate={{ 
+            y: [0, -15, 0],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ 
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 3
+          }}
+        />
+        
+        {/* Sharp square accent left side */}
+        <motion.div
+          className="absolute top-2/3 left-1/5 w-36 h-36 bg-gradient-to-br from-[#622F26]/25 to-transparent rounded-2xl rotate-45"
+          style={{ filter: 'blur(10px)' }}
+          animate={{ 
+            rotate: [45, 55, 45],
+            x: [0, 15, 0]
+          }}
+          transition={{ 
+            duration: 11,
+            repeat: Infinity,
+            ease: "easeInOut",
+            delay: 1
+          }}
+        />
+        
+        {/* Grid pattern overlay - Plus visible */}
+        <div className="absolute inset-0 opacity-[0.12]" 
+          style={{
+            backgroundImage: `
+              linear-gradient(to right, #622F26 1px, transparent 1px),
+              linear-gradient(to bottom, #622F26 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px'
+          }}
+        />
+      </div>
+
       {/* Navbar */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="flex items-center justify-between px-4 sm:px-8 py-3 sm:py-4 max-w-7xl mx-auto w-full flex-shrink-0"
+        className="flex items-center justify-between px-4 sm:px-8 py-3 sm:py-4 max-w-7xl mx-auto w-full flex-shrink-0 relative z-10"
       >
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -44,7 +200,7 @@ const HeroSection = () => {
       </motion.nav>
 
       {/* Hero Content */}
-      <div className="flex-1 flex items-center">
+      <div className="flex-1 flex items-center relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
           {/* Left Content */}
           <motion.div
@@ -95,7 +251,7 @@ const HeroSection = () => {
               <button className="bg-[#622F26] text-white px-6 sm:px-8 py-2.5 sm:py-3 lg:py-3 rounded-md text-sm lg:text-base font-medium hover:bg-[#4a221d] transition-colors shadow-lg">
                 Book a Free Visit
               </button>
-              <button className="bg-white text-[#622F26] px-6 sm:px-8 py-2.5 sm:py-3 lg:py-3 rounded-md text-sm lg:text-base font-medium hover:bg-gray-50 transition-colors border border-[#622F26]/20">
+              <button className="bg-[#EBE2CF] text-[#622F26] px-6 sm:px-8 py-2.5 sm:py-3 lg:py-3 rounded-md text-sm lg:text-base font-medium hover:bg-[#dfd6c0] transition-colors border border-[#622F26]/10">
                 Get a Quote
               </button>
             </motion.div>
@@ -133,33 +289,6 @@ const HeroSection = () => {
                 alt="Hardwood Shutters Detail" 
                 className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl object-cover border-4 border-white"
               />
-            </motion.div>
-
-            {/* Badge Promotion */}
-            <motion.div 
-              className="absolute -top-6 -left-6 w-28 h-28 lg:w-32 lg:h-32 bg-[#622F26] rounded-full flex items-center justify-center shadow-2xl z-10"
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
-              transition={{ duration: 0.8, delay: 1, type: "spring", stiffness: 200 }}
-            >
-              <div className="text-center">
-                <div className="text-white font-black text-3xl lg:text-4xl leading-none" style={{ fontFamily: 'var(--font-arp)' }}>20%</div>
-                <div className="text-white text-[10px] lg:text-xs mt-0.5 lg:mt-1">OFF</div>
-              </div>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg className="w-full h-full" viewBox="0 0 128 128">
-                  <path
-                    id="circlePath"
-                    d="M 64, 64 m -50, 0 a 50,50 0 1,1 100,0 a 50,50 0 1,1 -100,0"
-                    fill="none"
-                  />
-                  <text className="text-[7px] lg:text-[8px] fill-white/70 uppercase tracking-wider">
-                    <textPath href="#circlePath" startOffset="0%">
-                      FURNITURE SPECIAL • FURNITURE SPECIAL •
-                    </textPath>
-                  </text>
-                </svg>
-              </div>
             </motion.div>
 
             {/* Floating decoration */}
