@@ -6,9 +6,9 @@ import { Search } from 'lucide-react';
 const HeroSection = () => {
   return (
     <div className="h-screen max-h-screen bg-[#F2E4E1] flex flex-col overflow-hidden relative">
-      {/* Background Decorative Shapes */}
+      {/* Formes décoratives d'arrière-plan */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Large circle top right - Très flou */}
+        {/* Grand cercle en haut à droite - Très flou */}
         <motion.div
           className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-[#622F26]/12 rounded-full"
           style={{ filter: 'blur(100px)' }}
@@ -23,7 +23,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Medium circle bottom left - Flou moyen */}
+        {/* Cercle moyen en bas à gauche - Flou moyen */}
         <motion.div
           className="absolute -bottom-32 -left-32 w-[450px] h-[450px] bg-[#EBE2CF]/80 rounded-full"
           style={{ filter: 'blur(70px)' }}
@@ -39,7 +39,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Sharp decorative circle top left - PEU de blur */}
+        {/* Cercle décoratif net en haut à gauche - PEU de flou */}
         <motion.div
           className="absolute top-1/4 left-1/4 w-52 h-52 bg-[#622F26]/25 rounded-full"
           style={{ filter: 'blur(20px)' }}
@@ -55,7 +55,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Sharp geometric shape - PEU de blur */}
+        {/* Forme géométrique nette - PEU de flou */}
         <motion.div
           className="absolute top-1/3 right-1/4 w-48 h-48 bg-gradient-to-br from-[#622F26]/30 to-[#622F26]/10 rounded-3xl rotate-45"
           style={{ filter: 'blur(15px)' }}
@@ -70,7 +70,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Middle accent circle - Flou moyen */}
+        {/* Cercle d'accentuation central - Flou moyen */}
         <motion.div
           className="absolute top-1/2 left-1/2 w-64 h-64 bg-[#EBE2CF]/50 rounded-full"
           style={{ filter: 'blur(80px)' }}
@@ -86,7 +86,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Sharp accent bottom right - PEU de blur */}
+        {/* Accent net en bas à droite - PEU de flou */}
         <motion.div
           className="absolute bottom-1/4 right-1/3 w-40 h-40 bg-[#622F26]/28 rounded-full"
           style={{ filter: 'blur(18px)' }}
@@ -102,7 +102,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Sharp geometric accent bottom - PEU de blur */}
+        {/* Accent géométrique net en bas - PEU de flou */}
         <motion.div
           className="absolute bottom-1/3 left-1/3 w-56 h-56 bg-gradient-to-tl from-[#EBE2CF]/70 to-[#EBE2CF]/20 rounded-2xl rotate-12"
           style={{ filter: 'blur(25px)' }}
@@ -118,7 +118,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Additional sharp circle top right corner */}
+        {/* Cercle net supplémentaire dans le coin supérieur droit */}
         <motion.div
           className="absolute top-1/3 right-1/5 w-32 h-32 bg-[#EBE2CF]/60 rounded-full"
           style={{ filter: 'blur(12px)' }}
@@ -134,7 +134,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Sharp square accent left side */}
+        {/* Accent carré net sur le côté gauche */}
         <motion.div
           className="absolute top-2/3 left-1/5 w-36 h-36 bg-gradient-to-br from-[#622F26]/25 to-transparent rounded-2xl rotate-45"
           style={{ filter: 'blur(10px)' }}
@@ -150,7 +150,7 @@ const HeroSection = () => {
           }}
         />
         
-        {/* Grid pattern overlay - Plus visible */}
+        {/* Superposition de motif de grille - Plus visible */}
         <div className="absolute inset-0 opacity-[0.12]" 
           style={{
             backgroundImage: `
@@ -162,7 +162,7 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Navbar */}
+      {/* Barre de navigation */}
       <motion.nav 
         initial={{ y: -100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
@@ -180,29 +180,29 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Navigation Links */}
+        {/* Liens de navigation */}
         <div className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm">
-          <a href="#" className="text-gray-800 hover:text-[#622F26] transition-colors">Home</a>
-          <a href="#" className="text-gray-800 hover:text-[#622F26] transition-colors">About</a>
-          <a href="#" className="text-gray-800 hover:text-[#622F26] transition-colors">Product</a>
+          <a href="#" className="text-gray-800 hover:text-[#622F26] transition-colors">Accueil</a>
+          <a href="#" className="text-gray-800 hover:text-[#622F26] transition-colors">À propos</a>
+          <a href="#" className="text-gray-800 hover:text-[#622F26] transition-colors">Produit</a>
           <a href="#" className="text-gray-800 hover:text-[#622F26] transition-colors">Contact</a>
         </div>
 
-        {/* Search */}
+        {/* Recherche */}
         <div className="flex items-center gap-2 bg-white/50 backdrop-blur-sm px-4 py-2 rounded-full">
           <Search className="w-4 h-4 text-gray-500" />
           <input 
             type="text" 
-            placeholder="Search" 
+            placeholder="Rechercher" 
             className="bg-transparent outline-none text-sm w-24"
           />
         </div>
       </motion.nav>
 
-      {/* Hero Content */}
+      {/* Contenu principal */}
       <div className="flex-1 flex items-center relative z-10">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 w-full pt-16 pb-20 grid md:grid-cols-2 gap-12 items-center">
-          {/* Left Content */}
+          {/* Contenu gauche */}
           <motion.div
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -216,11 +216,11 @@ const HeroSection = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              Elevate your space
+              Sublimez votre espace
               <br />
-              <span className="text-black">with <span className="text-[#622F26]">Luxurious</span></span>
+              <span className="text-black">avec des volets en bois <span className="text-[#622F26]">Luxueux</span></span>
               <br />
-              <span className="text-black">hardwood shutters</span>
+              <span className="text-black">en bois dur</span>
             </motion.h1>
 
             <motion.p 
@@ -229,7 +229,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
             >
-              All standard Hardwood Shutters now just <span className="font-bold text-[#622F26]">£238.00</span> per sqm
+              Tous les volets en bois dur standard à seulement <span className="font-bold text-[#622F26]">238,00 €</span> par m²
             </motion.p>
             
             <motion.p 
@@ -238,10 +238,10 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              including design, survey, manufacture and fitting
+              incluant la conception, l'expertise, la fabrication et l'installation
             </motion.p>
 
-            {/* CTA Buttons */}
+            {/* Boutons d'appel à l'action */}
             <motion.div 
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
               initial={{ opacity: 0, y: 20 }}
@@ -249,15 +249,15 @@ const HeroSection = () => {
               transition={{ duration: 0.6, delay: 0.8 }}
             >
               <button className="bg-[#622F26] text-white px-6 sm:px-8 py-2.5 sm:py-3 lg:py-3 rounded-md text-sm lg:text-base font-medium hover:bg-[#4a221d] transition-colors shadow-lg">
-                Book a Free Visit
+                Réserver une visite gratuite
               </button>
               <button className="bg-[#EBE2CF] text-[#622F26] px-6 sm:px-8 py-2.5 sm:py-3 lg:py-3 rounded-md text-sm lg:text-base font-medium hover:bg-[#dfd6c0] transition-colors border border-[#622F26]/10">
-                Get a Quote
+                Obtenir un devis
               </button>
             </motion.div>
           </motion.div>
 
-          {/* Right Content - Image avec Badge */}
+          {/* Contenu droit - Image avec badge */}
           <motion.div
             initial={{ x: 100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
@@ -272,7 +272,7 @@ const HeroSection = () => {
             >
               <img 
                 src="/img/hero_1.png" 
-                alt="Hardwood Shutters" 
+                alt="Volets en bois dur" 
                 className="w-full h-auto rounded-2xl lg:rounded-3xl shadow-2xl object-cover"
               />
             </motion.div>
@@ -286,12 +286,12 @@ const HeroSection = () => {
             >
               <img 
                 src="/img/hero_2.png" 
-                alt="Hardwood Shutters Detail" 
+                alt="Détail des volets en bois dur" 
                 className="w-full h-auto rounded-xl lg:rounded-2xl shadow-2xl object-cover border-4 border-white"
               />
             </motion.div>
 
-            {/* Floating decoration */}
+            {/* Décoration flottante */}
             <motion.div
               className="absolute top-1/2 -right-4 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-xl lg:rounded-2xl shadow-lg"
               animate={{ 
